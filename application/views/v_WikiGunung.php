@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-echo "<h1>Daftar gunung di Aceh<h1>";
+echo "<h1>".$Header."</h1>";
 echo "<table border=1><tr>";
 	foreach ($gunung["result"]["variables"] as $variable) 
 	{

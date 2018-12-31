@@ -14,7 +14,7 @@ class WikiGunung extends CI_Controller {
 		$data = array(
 			'gunung' =>$this->WikiModel->tampil()
 		);
-		
+		$data['Header'] = "Gunung di Aceh";
 		$this->load->view('v_WikiGunung', $data);
 		
 	}

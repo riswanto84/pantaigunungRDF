@@ -14,7 +14,7 @@ class GunungAceh extends CI_Controller {
 		$data = array(
 			'gunung' =>$this->WikiModel->gunungAceh()
 		);
-		
+		$data['Header'] = "Gunung di Aceh";
 		$this->load->view('v_WikiGunung', $data);
 		
 	}

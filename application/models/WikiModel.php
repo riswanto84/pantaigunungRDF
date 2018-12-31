@@ -23,6 +23,29 @@ class WikiModel extends CI_Model {
 		return $rows;
 	}
 	
+	function GunungIndonesia(){
+		$this->load->library('Rdf');
+		$endpoint = "https://query.wikidata.org/sparql";
+		$sc = new SparqlClient();
+		$sc->setEndpointRead($endpoint);
+		$query = "SELECT ?item ?itemLabel ?coord ?elev ?picture ?terletak_di_wilayah_administrasi ?terletak_di_wilayah_administrasiLabel WHERE {
+					?item wdt:P31 wd:Q8502.
+					?item (p:P2044/psn:P2044/wikibase:quantityAmount) ?elev.
+					?item wdt:P625 ?coord.
+					?item wdt:P17 wd:Q252.
+					?item wdt:P18 ?picture.
+					SERVICE wikibase:label { bd:serviceParam wikibase:language 'id'. }
+					OPTIONAL { ?item wdt:P131 ?terletak_di_wilayah_administrasi. }
+				}
+					ORDER BY ?itemLabel
+					LIMIT 3
+				";
+		$rows = $sc->query($query, 'rows');
+		$err = $sc->getErrors();
+		
+		return $rows;
+	}
+	
 	function gunungAceh(){
 		$this->load->library('Rdf');
 		$endpoint = "https://query.wikidata.org/sparql";
