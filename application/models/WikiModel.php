@@ -38,11 +38,10 @@ class WikiModel extends CI_Model {
 					OPTIONAL { ?item wdt:P131 ?terletak_di_wilayah_administrasi. }
 				}
 					ORDER BY ?itemLabel
-					LIMIT 3
+					LIMIT 20
 				";
 		$rows = $sc->query($query, 'rows');
 		$err = $sc->getErrors();
-		
 		return $rows;
 	}
 	

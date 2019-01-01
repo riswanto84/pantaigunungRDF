@@ -24,12 +24,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	?>
       <!-- Blog Post -->
       <div class="card mb-4">
-        <img class="card-img-top" src= <?php echo $row['picture'];?> >
+        <img class="card-img-top" src= https://upload.wikimedia.org/wikipedia/commons/7/7f/Kegagahan_Merapi.jpg >
         <div class="card-body">
-          <h2 class="card-title"><?php echo $row['itemLabel'] ?></h2>
-          <p class="card-text">Ketinggian : <?php echo $row['elev'] ?> meter</p>
-		  <p class="card-text">Koordinat : <?php echo $row['coord'] ?></p>
-		  <p class="card-text">Wilayah administrasi : <?php echo $row['terletak_di_wilayah_administrasiLabel'] ?>
+          <h2 class="card-title"><?php echo $row['label'] ?></h2>
+		  <p class="card-text">Deskripsi : <?php echo $row['description'] ?></p>
 		  </p>
           <a href="#" class="btn btn-primary">Read More &rarr;</a>
         </div>
@@ -76,14 +74,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-lg-6">
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Lokal Triple Store</a>
+                  <a href="<?php echo site_url("WikiGunungLT"); ?>">Lokal Triple Store</a>
                 </li>
               </ul>
             </div>
             <div class="col-lg-6">
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a>
+                  <a href="<?php echo site_url(); ?>">Wikidata</a>
                 </li>
               </ul>
             </div>
