@@ -5,14 +5,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 
   <head>
-
+	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <title>wisata gunung pantai - Tugas Semantic Web kelompok : Kami        -MIK UI 2018-</title>
+	
+	<!-- Menyisipkan library Google Maps -->
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+        // fungsi initialize untuk mempersiapkan peta
+        function initialize() {
+        var propertiPeta = {
+            center:new google.maps.LatLng(-0.7892750,113.9213270),
+            zoom:4,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        
+        var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+        }
 
+        // event jendela di-load  
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url("bootstrap/vendor/bootstrap/css/bootstrap.min.css"); ?>"
     rel = "stylesheet" type="text/css">

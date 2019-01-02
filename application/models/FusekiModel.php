@@ -14,8 +14,18 @@ class FusekiModel extends CI_Model {
 			  prefix xml: <http://www.w3.org/XML/1998/namespace>
 			  prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 				
-			  select ?item ?description ?label where { ?item pg:hasDescription ?description; 
-			  pg:hasLabel ?label. }";
+			  select distinct ?item ?label ?description ?image ?review ?akses ?thingstodo 
+			  ?wikidataCode ?wikiEn ?wikiId 
+			  where {
+			  ?item pg:hasDescription ?description;
+			  pg:hasLabel ?label;
+			  pg:hasImage ?image;
+			  pg:hasReview ?review;
+			  pg:howToReach ?akses;
+			  pg:thingsToDo ?thingstodo;
+			  pg:hasWikidata ?wikidataCode;
+			  pg:hasWikiEN ?wikiEn;
+			  pg:hasWikiID ?wikiId.}";
 			  
 		$rows = $sc->query($query, 'rows');
 		$err = $sc->getErrors();

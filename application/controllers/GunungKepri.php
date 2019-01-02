@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 use BorderCloud\SPARQL\SparqlClient;
 
-class GunungAceh extends CI_Controller {
+class GunungKepri extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
@@ -12,10 +12,12 @@ class GunungAceh extends CI_Controller {
 	
 	function index() {
 		$data = array(
-			'gunung' =>$this->WikiModel->gunungAceh()
+			'gunung' =>$this->WikiModel->gunungKepri()
 		);
-		$data['Header'] = "Gunung di Aceh";
-		$this->load->view('v_WikiGunung', $data);
+		$data['Header'] = "Gunung di Jambi";
+		$this->load->view('template/header');
+		$this->load->view('beranda', $data);
+		$this->load->view('template/footer');
 		
 	}
 }

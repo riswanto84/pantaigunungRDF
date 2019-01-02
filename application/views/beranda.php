@@ -20,12 +20,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{ 
 			$row['terletak_di_wilayah_administrasiLabel'] = "-";
 		}
+		
 		;
 	?>
       <!-- Blog Post -->
       <div class="card mb-4">
-        <img class="card-img-top" src= <?php echo $row['picture'];?> >
-        <div class="card-body">
+        <img class="card-img-top" src= 
+		<?php 
+		if (!empty($row['picture']))
+		{
+			echo $row['picture'];
+		}
+		else { echo "http://siks-absensi.kemsos.net:84/GAMBAR/belum_ada_gambar-472x472.png";}
+		?> >
+        
+		
+		<div class="card-body">
           <h2 class="card-title"><?php echo $row['itemLabel'] ?></h2>
           <p class="card-text">Ketinggian : <?php echo $row['elev'] ?> meter</p>
 		  <p class="card-text">Koordinat : <?php echo $row['coord'] ?></p>
@@ -70,20 +80,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <!-- Categories Widget -->
       <div class="card my-4">
-        <h5 class="card-header">Kategori Data</h5>
+        <h5 class="card-header">Pegunungan Indonesia</h5>
         <div class="card-body">
           <div class="row">
             <div class="col-lg-6">
               <ul class="list-unstyled mb-0">
+				<li>
+					<p class="card-text"><b>Lokal Triplestore :</b></p>
+				</li>
                 <li>
-                  <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Lokal Triple Store</a>
+                  <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Aceh</a>
                 </li>
               </ul>
             </div>
             <div class="col-lg-6">
               <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a>
+				<li>
+				<p class="card-text"><b>Wikidata :</b></p>
+				</li>
+				<li>
+                  <a href="<?php echo site_url("GunungAceh"); ?>">Aceh</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("GunungSumut"); ?>">Sumatera Utara</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("GunungSumbar"); ?>">Sumatera Barat</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("GunungJambi"); ?>">Jambi</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("GunungSumsel"); ?>">Sumatera Selatan</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("GunungBengkulu"); ?>">Bengkulu</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("GunungKepri"); ?>">Kepulauan Riau</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("GunungLampung"); ?>">Lampung</a>
                 </li>
               </ul>
             </div>
@@ -93,9 +130,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <!-- Side Widget -->
       <div class="card my-4">
-        <h5 class="card-header">Side Widget</h5>
+        <h5 class="card-header">Peta</h5>
         <div class="card-body">
-          You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+          <div id="googleMap" style="width:100%;height:380px;"></div>
         </div>
       </div>
 
