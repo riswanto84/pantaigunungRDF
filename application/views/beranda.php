@@ -89,7 +89,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<p class="card-text"><b>Lokal Triplestore :</b></p>
 				</li>
                 <li>
-                  <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Aceh</a>
+                  <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Gunung & Pantai</a>
                 </li>
               </ul>
             </div>

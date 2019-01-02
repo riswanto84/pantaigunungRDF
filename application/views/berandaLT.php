@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="card-body">
           <h2 class="card-title"><?php echo $row['label'] ?></h2>
 		  <p class="card-text">Deskripsi : <?php echo $row['description'] ?></p>
-		  <p class="card-text">Wiki Data Code : <?php echo $row['wikidataCode'] ?></p>
+		  <p class="card-text">Wiki Data Code : <a href="<?php echo $row['wikidataCode'] ?>"><?php echo $row['wikidataCode'] ?></a></p>
 		  <a class="page-link" href="<?php echo $row['review'] ?>">Ulasan Google</a>
 		  <a class="page-link" href="<?php echo $row['akses'] ?>">Akses ke lokasi</a>
 		  <a class="page-link" href="<?php echo $row['thingstodo'] ?>">Kegiatan yang bisa dilakukan</a>
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<p class="card-text"><b>Lokal Triplestore :</b></p>
 				</li>
                 <li>
-                  <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Aceh</a>
+                  <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Gunung & Pantai</a>
                 </li>
               </ul>
             </div>
