@@ -193,4 +193,5 @@ class WikiModel extends CI_Model {
 		
 		return $rows;
 	}
+	
 }

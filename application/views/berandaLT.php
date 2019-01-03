@@ -28,11 +28,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="card-body">
           <h2 class="card-title"><?php echo $row['label'] ?></h2>
 		  <p class="card-text">Deskripsi : <?php echo $row['description'] ?></p>
-		  <p class="card-text">Wiki Data Code : <a href="<?php echo $row['wikidataCode'] ?>"><?php echo $row['wikidataCode'] ?></a></p>
+		  <p class="card-text">Wiki Data Code : <a href="<?php echo $row['wikidataCode'] ?>"><?php echo $row['wikidataCode'] ?></a></p>		  
+		  <p class="card-text"><a href="<?php echo base_url()."index.php/DetailWisata/detail/".$row['label']; ?>" >Selengkapnya</a></p>
 		  <a class="page-link" href="<?php echo $row['review'] ?>">Ulasan Google</a>
 		  <a class="page-link" href="<?php echo $row['akses'] ?>">Akses ke lokasi</a>
 		  <a class="page-link" href="<?php echo $row['thingstodo'] ?>">Kegiatan yang bisa dilakukan</a>
-		  <embed src="<?php echo $row['wikiId'] ?>" style="width:690px; height: 500px;">
+		  </br>
+		  <embed src="<?php echo $row['wikiId'] ?>" style="width:690px; height: 400px;">
 		  </p>
         </div>
         <div class="card-footer text-muted">
@@ -72,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <!-- Categories Widget -->
       <div class="card my-4">
-        <h5 class="card-header">Pegunungan Indonesia</h5>
+        <h5 class="card-header">Wisata Pegunungan & Pantai</h5>
         <div class="card-body">
           <div class="row">
             <div class="col-lg-6">

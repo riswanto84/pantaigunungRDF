@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <!-- Categories Widget -->
       <div class="card my-4">
-        <h5 class="card-header">Pegunungan Indonesia</h5>
+        <h5 class="card-header">Wisata Pegunungan & Pantai</h5>
         <div class="card-body">
           <div class="row">
             <div class="col-lg-6">
