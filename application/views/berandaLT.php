@@ -29,17 +29,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <h2 class="card-title"><?php echo $row['label'] ?></h2>
 		  <p class="card-text">Deskripsi : <?php echo $row['description'] ?></p>
 		  <p class="card-text">Wiki Data Code : <a href="<?php echo $row['wikidataCode'] ?>"><?php echo $row['wikidataCode'] ?></a></p>		  
-		  <p class="card-text"><a href="<?php echo base_url()."index.php/DetailWisata/detail/".$row['label']; ?>" >Selengkapnya</a></p>
 		  <a class="page-link" href="<?php echo $row['review'] ?>">Ulasan Google</a>
 		  <a class="page-link" href="<?php echo $row['akses'] ?>">Akses ke lokasi</a>
-		  <a class="page-link" href="<?php echo $row['thingstodo'] ?>">Kegiatan yang bisa dilakukan</a>
+		  
 		  </br>
 		  <embed src="<?php echo $row['wikiId'] ?>" style="width:690px; height: 400px;">
 		  </p>
         </div>
         <div class="card-footer text-muted">
-          Posted on January 1, 2017 by
-          <a href="#">Start Bootstrap</a>
+          <a href="echo $row['wikidataCode']"><?php echo $row['wikidataCode'] ?></a>
         </div>
       </div>
 	<?php } ?>
@@ -64,10 +62,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h5 class="card-header">Pencarian</h5>
         <div class="card-body">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Cari...">
+			<?php echo form_open('DetailWisata/search') ?>
             <span class="input-group-btn">
-              <button class="btn btn-secondary" type="button">Go!</button>
+				<input type="text" name="keyword" placeholder="search">
+				<input type="submit" name="search_submit" value="Cari">  
             </span>
+			<?php echo form_close() ?>
           </div>
         </div>
       </div>
@@ -84,6 +84,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</li>
                 <li>
                   <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Gunung & Pantai</a>
+                </li>
+				<li>
+                  <a href="<?php echo site_url("DetailWisata"); ?>">Semua Data</a>
                 </li>
               </ul>
             </div>

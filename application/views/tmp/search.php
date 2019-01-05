@@ -14,40 +14,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <h1 class="my-4">
         <small><?php  ?></small>
       </h1>
-	
-	<?php foreach ($gunung["result"]["rows"] as $row) { 
-		if (empty($row['terletak_di_wilayah_administrasiLabel'])) 
-		{ 
-			$row['terletak_di_wilayah_administrasiLabel'] = "-";
-		}
-		
+	  
+	<table class="table table-hover table-striped">
+	<thead>
+			<tr>
+				<th>No</th>
+				<th>Nama</th>
+			</tr>
+		</thead>
+	<?php
+		$no = 0;
+		foreach ($gunung["result"]["rows"] as $row) { 
 		;
 	?>
-      <!-- Blog Post -->
-      <div class="card mb-4">
-        <img class="card-img-top" src= 
-		<?php 
-		if (!empty($row['picture']))
-		{
-			echo $row['picture'];
-		}
-		else { echo "http://siks-absensi.kemsos.net:84/GAMBAR/belum_ada_gambar-472x472.png";}
-		?> >
-        
-		
-		<div class="card-body">
-          <h2 class="card-title"><?php echo $row['itemLabel'] ?></h2>
-          <p class="card-text">Ketinggian : <?php echo $row['elev'] ?> meter</p>
-		  <p class="card-text">Koordinat : <?php echo $row['coord'] ?></p>
-		  <p class="card-text">Wilayah administrasi : <?php echo $row['terletak_di_wilayah_administrasiLabel'] ?>
-		  </p>
-        </div>
-        <div class="card-footer text-muted">
-          Wiki Data link
-          <a href="<?php echo $row['item'] ?>"><?php echo $row['item'] ?></a>
-        </div>
-      </div>
+      
+	  <!-- Blog Post -->
+      
+			<tr>
+				<td> <?php echo $no = $no+1; ?></td>
+				<td><?php echo $row['label'] ?></td>
+			</tr>
+     
 	<?php } ?>
+	  
+	  </table>
+	  
 	  
       <!-- Pagination -->
       <ul class="pagination justify-content-center mb-4">
@@ -65,6 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-md-4">
 
       <!-- Search Widget -->
+	  
       <div class="card my-4">
         <h5 class="card-header">Pencarian</h5>
         <div class="card-body">
@@ -78,6 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
       </div>
+	  
 
       <!-- Categories Widget -->
       <div class="card my-4">
@@ -92,6 +85,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li>
                   <a href="<?php echo site_url("GunungIndonesiaLT"); ?>">Gunung & Pantai</a>
                 </li>
+				<li>
+                  <a href="<?php echo site_url("DetailWisata"); ?>">Semua Data</a>
+                </li>
               </ul>
             </div>
             <div class="col-lg-6">
@@ -100,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<p class="card-text"><b>Wikidata :</b></p>
 				</li>
 				<li>
-                  <a href="<?php echo site_url("GunungAceh"); ?>">Aceh</a>
+                   <a href="<?php echo site_url("GunungAceh"); ?>">Aceh</a>
                 </li>
 				<li>
                   <a href="<?php echo site_url("GunungSumut"); ?>">Sumatera Utara</a>
@@ -116,9 +112,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
 				<li>
                   <a href="<?php echo site_url("GunungBengkulu"); ?>">Bengkulu</a>
-                </li>
-				<li>
-                  <a href="<?php echo site_url("GunungKepri"); ?>">Kepulauan Riau</a>
                 </li>
 				<li>
                   <a href="<?php echo site_url("GunungLampung"); ?>">Lampung</a>
