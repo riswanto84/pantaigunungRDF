@@ -20,7 +20,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{ 
 			$row['terletak_di_wilayah_administrasiLabel'] = "-";
 		}
-		
+		if (empty($row['VOGRIPA_ID'])) 
+		{ 
+			$row['VOGRIPA_ID'] = "";
+		}
+		if (empty($row['Smithsonian_volcano_ID'])) 
+		{ 
+			$row['Smithsonian_volcano_ID'] = "";
+		}
+		if (empty($row['penanda_Freebase'])) 
+		{ 
+			$row['penanda_Freebase'] = "";
+		}
 		;
 	?>
       <!-- Blog Post -->
@@ -31,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			echo $row['picture'];
 		}
-		else { echo "http://siks-absensi.kemsos.net:84/GAMBAR/belum_ada_gambar-472x472.png";}
+		else { echo "http://localhost:84/img/480px-No_image_available.svg.png";}
 		?> >
         
 		
@@ -40,24 +51,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <p class="card-text">Ketinggian : <?php echo $row['elev'] ?> meter</p>
 		  <p class="card-text">Koordinat : <?php echo $row['coord'] ?></p>
 		  <p class="card-text">Wilayah administrasi : <?php echo $row['terletak_di_wilayah_administrasiLabel'] ?>
-		  </p>
+		  <p class="card-text">Vogriva ID : <a href="http://www.bgs.ac.uk/vogripa/searchVOGRIPA.cfc?method=detail&id=<?php echo $row['VOGRIPA_ID'] ?>"><?php echo $row['VOGRIPA_ID'] ?></a></p>
+		  <p class="card-text">Freebase ID : <a href="https://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid=<?php echo $row['penanda_Freebase'] ?>"><?php echo $row['penanda_Freebase'] ?></a></p>
+		  <p class="card-text">Smithsonian volcano ID : <a href="http://volcano.si.edu/volcano.cfm?vn=<?php echo $row['Smithsonian_volcano_ID'] ?>"><?php echo $row['Smithsonian_volcano_ID'] ?></a></p>
         </div>
         <div class="card-footer text-muted">
           Wiki Data link
           <a href="<?php echo $row['item'] ?>"><?php echo $row['item'] ?></a>
-        </div>
+		  <?php if (!empty($row['VOGRIPA_ID'])) { ?>
+		  <embed src="http://www.bgs.ac.uk/vogripa/searchVOGRIPA.cfc?method=detail&id=<?php echo $row['VOGRIPA_ID']; } ?>" style="width:690px; height: 700px;">
+		</div>
       </div>
 	<?php } ?>
-	  
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center mb-4">
-        <li class="page-item">
-          <a class="page-link" href="#">&larr; Older</a>
-        </li>
-        <li class="page-item disabled">
-          <a class="page-link" href="#">Newer &rarr;</a>
-        </li>
-      </ul>
 
     </div>
 

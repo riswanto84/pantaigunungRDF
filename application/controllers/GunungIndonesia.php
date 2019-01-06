@@ -22,4 +22,16 @@ class GunungIndonesia extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	
+	function search() {
+		$keyword = $this->input->post('keyword');
+		$data = array(
+			'gunung' =>$this->FusekiModel->cari($keyword)
+		);
+			
+		$this->load->view('template/header');
+		$this->load->view('beranda', $data);
+		$this->load->view('template/footer');
+	}
+	
+	
 }

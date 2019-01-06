@@ -15,7 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <small><?php  ?></small>
       </h1>
 	
-	<?php foreach ($gunung["result"]["rows"] as $row) { 
+	<?php 
+	foreach ($gunung["result"]["rows"] as $row) { 
 		if (empty($row['terletak_di_wilayah_administrasiLabel'])) 
 		{ 
 			$row['terletak_di_wilayah_administrasiLabel'] = "-";
@@ -41,16 +42,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
 	<?php } ?>
-	  
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center mb-4">
-        <li class="page-item">
-          <a class="page-link" href="#">&larr; Older</a>
-        </li>
-        <li class="page-item disabled">
-          <a class="page-link" href="#">Newer &rarr;</a>
-        </li>
-      </ul>
 
     </div>
 
